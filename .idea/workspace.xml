@@ -5,20 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ef82e55-2374-4cdf-aebc-7ef6c0cc66d6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/Gamecontroller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exceptions/InvalidGameDimensionException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Bot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/BotDifficultyLevel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Cell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/CellState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/GameStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Move.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/PlayerType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Stratergy/BotPlayingStratergy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Stratergy/EasyBotPlayingStratergy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Stratergy/GameWinningStratergy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Stratergy/OrderOneGameWinningStratergy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Gamecontroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Gamecontroller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Bot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +26,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>

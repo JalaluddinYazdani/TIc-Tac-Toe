@@ -1,6 +1,8 @@
 package models;
 
 import Exceptions.InvalidGameDimensionException;
+import Stratergy.GameWinningStratergy;
+import Stratergy.OrderOneGameWinningStratergy;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -8,6 +10,20 @@ import java.util.List;
 public class Game {
     private Board board;
     private List<Player> players;
+
+    public GameWinningStratergy getGameWinningStratergy() {
+        return gameWinningStratergy;
+    }
+
+    public void setGameWinningStratergy(GameWinningStratergy gameWinningStratergy) {
+        this.gameWinningStratergy = gameWinningStratergy;
+    }
+
+    public void setWinningPlayer(Player winningPlayer) {
+        this.winningPlayer = winningPlayer;
+    }
+
+    private GameWinningStratergy gameWinningStratergy;
 
     public Player getWinningPlayer() {
         return winningPlayer;
@@ -64,6 +80,39 @@ public class Game {
     private GameStatus gameStatuss;
     private int nextPlayerIndex;
 
+    public void makeNextMove() {
+        Player playerWhoMoveItis = players.get(nextPlayerIndex);
+        System.out.println("It is "+playerWhoMoveItis.getName()+"s turn");
+
+        Move move = playerWhoMoveItis.decideMove(board);
+
+        int row = move.getCell().getRow();
+        int col = move.getCell().getCol();
+
+        if(board.getBoard().get(row).get(col).getCellState().equals(CellState.EMPTY)){
+             board.applyMove(move);
+             moves.add(move);
+
+             //check winner
+             if(gameWinningStratergy.checkWinner(board,move)){
+                  gameStatuss = gameStatuss.ENDED;
+                  winningPlayer=playerWhoMoveItis;
+             }
+
+             //DRAW
+            if(moves.size()== board.getSize()* board.getSize()){
+                gameStatuss=GameStatus.DRAW;
+            }
+
+            nextPlayerIndex +=1;
+            nextPlayerIndex%=players.size();
+        }else{
+            //throw an exception
+        }
+        
+        
+    }
+
     public static class Builder{
         private int dimension;
         private List<Player> players;
@@ -90,7 +139,9 @@ public class Game {
             game.setPlayers(players);
             game.setMoves(new LinkedList<>());
             game.setNextPlayerIndex(0);
-
+            game.setGameStatuss(GameStatus.INPROGRESS);
+            game.setGameWinningStratergy(new
+                    OrderOneGameWinningStratergy(dimension));
             return game;
 
         }

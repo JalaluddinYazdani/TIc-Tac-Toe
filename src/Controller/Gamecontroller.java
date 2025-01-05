@@ -18,12 +18,20 @@ public class Gamecontroller {
     }
 
     public String getWinnerName(Game game){
-        return game.getWinningPlayer().getName()
+        return game.getWinningPlayer().getName();
     }
 //    public void displayBoard(Game game){
 //        game.getBoard().;
 //    }
     public void setGameStatus(Game game , GameStatus gameStatus){
         game.setGameStatuss(gameStatus);
+    }
+
+    public void displayBoard(Game game) {
+        game.getBoard().displayBoard();
+    }
+
+    public void executeNextMove(Game game) {
+        game.makeNextMove();
     }
 }
